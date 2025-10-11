@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Nutrition Tracker 🍎</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>AI Nutrition Tracker</h1>
+    <p class="subtitle">Track your calories with AI-powered food recognition 🍽️</p>
+
+    <!-- USER REGISTRATION -->
+    <div class="card">
+      <h2>👤 Register / Update Profile</h2>
+      <form id="register-form">
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="number" name="age" placeholder="Age" required />
+        <input type="number" name="height" placeholder="Height (cm)" required />
+        <input type="number" name="weight" placeholder="Weight (kg)" required />
+        <select name="gender" required>
+          <option value="" disabled selected>Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <button type="submit">Register / Update</button>
+      </form>
+      <p id="register-status"></p>
+    </div>
+
+    <!-- IMAGE UPLOAD -->
+    <div class="card">
+      <h2>📸 Upload Food Image</h2>
+      <form id="upload-form" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" required />
+        <input type="text" name="name" placeholder="Registered Name" required />
+        <button type="submit">Upload & Analyze</button>
+      </form>
+      <div id="result"></div>
+    </div>
+
+    <!-- WEEKLY DASHBOARD -->
+    <div class="card" id="chart-section">
+      <h2>📈 Weekly Calorie Intake</h2>
+      <canvas id="calorieChart" width="600" height="300"></canvas>
+    </div>
+
+    <footer>
+      Created by — <span>Smruti Ranjan Nayak</span> ✨
+    </footer>
+  </div>
+
+  <!-- main frontend logic -->
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
