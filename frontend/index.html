@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>AI Nutrition Tracker 🍎</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Runtime env injected by Netlify during build as frontend/env.js -->
+  <!-- Netlify will create frontend/env.js with: window._ENV = { API_URL: "https://your-backend.onrender.com" } -->
+  <script src="/env.js"></script>
+  <script>
+    // Fallback & convenience helper in case env.js isn't present (local dev)
+    window._ENV = window._ENV || { API_URL: "https://your-backend.onrender.com" };
+    // Also expose a short alias many scripts expect:
+    window.API_BASE = (window._ENV && window._ENV.API_URL) || "https://your-backend.onrender.com";
+  </script>
 </head>
 <body>
   <div class="container">
@@ -51,7 +62,7 @@
     </footer>
   </div>
 
-  <!-- main frontend logic -->
+  <!-- main frontend logic (your file) -->
   <script src="script.js"></script>
 </body>
 </html>
